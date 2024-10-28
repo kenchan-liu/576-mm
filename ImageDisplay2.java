@@ -73,12 +73,12 @@ public class ImageDisplay {
 
 		// Initialize images
 		imgOne = new BufferedImage(inputWidth, inputHeight, BufferedImage.TYPE_INT_RGB);
-		
+
 		readImageRGB(inputWidth, inputHeight, imgPath, imgOne);
 
 		// Resample the image based on the method
 		BufferedImage resampledImage = resampleImage(imgOne, outputWidth, outputHeight, resamplingMethod);
-		
+
 		// Display image
 		frame = new JFrame();
 		lbIm1 = new JLabel(new ImageIcon(resampledImage));
@@ -187,7 +187,7 @@ public class ImageDisplay {
 					double distanceY = (y - centerY) / (double) centerY;
 					double distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
 
-					double stretchFactor = 0.5 + (Math.pow(distance, 0.66) * 0.5);
+					double stretchFactor = 0.5 + (Math.pow(distance, 0.6) * 0.5);
 					stretchFactor = Math.min(1.05, stretchFactor);
 					System.out.println(stretchFactor);
 
